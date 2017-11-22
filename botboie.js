@@ -12,8 +12,17 @@ const prefix = "!";
 client.on("message", (message) => {
   // ignore bot messages
   if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+  // list all commands
+  if(message.content.startsWith(prefix+"list")){
+    var commands = ["!ping", "!cyka", "!no", "!dab", "!meme", "!mlg"]
+    for(i=0;i<commands.length;i++){
+      send_text(commands[i]);
+    }
+  }
+
   // events
-  if(message.content.startsWith(prefix+"ping")) {
+  if(message.content.startsWith(prefix+"ping")){
     send_text("pong!");
   }
   if(message.content.startsWith(prefix+"cyka")){
