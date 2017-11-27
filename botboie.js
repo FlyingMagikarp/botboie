@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var fs = require("fs");
+var token_functions = require("./token.js");
 
 client.on("ready", () => {
   console.log("BotBoie.js is ready!");
@@ -77,5 +78,5 @@ client.on("message", (message) => {
 
 });
 
-
-client.login("MzgyODQwNzU3Mjc2NjM5MjQz.DPbkBg.EH1EQDuzwWD2PUNsZZ3U3WGvd_w");
+var token = token_functions.get_token();
+client.login(token);
